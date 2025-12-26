@@ -1,21 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>College ERP</title>
-  <link rel="stylesheet" href="./src/assets/css/global.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute Official Website - Student Portal</title>
+    <link rel="stylesheet" href="./src/assets/css/landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main class="page-shell">
-    <h1>College ERP Frontend</h1>
-    <p>Use the pages inside <code>src/pages</code> to navigate the app.</p>
-    <ul>
-      <li><a href="./src/pages/login.html">Login</a></li>
-      <li><a href="./src/pages/dashboard.html">Dashboard</a></li>
-      <li><a href="./src/pages/student.html">Student</a></li>
-      <li><a href="./src/pages/faculty.html">Faculty</a></li>
-      <li><a href="./src/pages/admin.html">Admin</a></li>
-    </ul>
-  </main>
+    <!-- Header with Logo Space -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-placeholder">
+                <img src="logo-placeholder.png" alt="Institute Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-text" style="display: none;">
+                    <span class="logo-initial">I</span>
+                    <span class="logo-name">INSTITUTE</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#register" class="nav-link">Register</a></li>
+                <li><a href="#signin" class="nav-link">Sign In</a></li>
+                <li><a href="#help" class="nav-link">Help</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Our Institute</h1>
+                <p class="hero-subtitle">Your Gateway to Academic Excellence and Success</p>
+                <p class="hero-description">Access your information, track attendance, monitor performance, and celebrate achievements all in one place.</p>
+                <div class="hero-buttons">
+                    <a href="#signin" class="btn btn-primary">Sign In</a>
+                    <a href="#register" class="btn btn-secondary">Register Now</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic"></div>
+            </div>
+        </section>
+
+        <!-- User Portals Section -->
+        <section class="portals">
+            <div class="container">
+                <h2 class="section-title">Access Your Portal</h2>
+                <p class="section-subtitle">Choose your role to access personalized information</p>
+                <div class="portal-cards">
+                    <div class="portal-card">
+                        <div class="portal-icon">👨‍🎓</div>
+                        <h3>Students</h3>
+                        <p>View your attendance, grades, performance metrics, and achievements. Access course materials and academic resources.</p>
+                        <a href="#signin" class="portal-btn">Student Login</a>
+                    </div>
+                    <div class="portal-card">
+                        <div class="portal-icon">👨‍🏫</div>
+                        <h3>Faculty</h3>
+                        <p>Manage classes, track student attendance, update grades, and access administrative tools.</p>
+                        <a href="#signin" class="portal-btn">Faculty Login</a>
+                    </div>
+                    <div class="portal-card">
+                        <div class="portal-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Parents</h3>
+                        <p>Monitor your child's academic progress, attendance records, and achievements in real-time.</p>
+                        <a href="#signin" class="portal-btn">Parent Login</a>
+                    </div>
+                    <div class="portal-card">
+                        <div class="portal-icon">👥</div>
+                        <h3>Admin</h3>
+                        <p>Access institutional resources, announcements, and member-specific information.</p>
+                        <a href="#signin" class="portal-btn">Admin Login</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Our Institute</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>We are committed to providing excellence in education and fostering an environment where students can thrive academically and personally.</p>
+                        <p>Our comprehensive online portal ensures that students, faculty, parents, and all members of our community have easy access to important information, academic records, and institutional resources.</p>
+                        <ul class="about-features">
+                            <li>✓ Real-time attendance tracking</li>
+                            <li>✓ Performance analytics and reports</li>
+                            <li>✓ Achievement recognition system</li>
+                            <li>✓ Secure and confidential data management</li>
+                            <li>✓ 24/7 access to academic resources</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <div class="about-graphic"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3>Performance Tracking</h3>
+                        <p>Monitor academic performance with detailed analytics and progress reports.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <h3>Attendance Management</h3>
+                        <p>Track and view attendance records in real-time with detailed reports.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Achievements</h3>
+                        <p>Celebrate and showcase academic and extracurricular achievements.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure Access</h3>
+                        <p>Your data is protected with industry-standard security measures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Register Section -->
+        <section id="register" class="register-section">
+            <div class="container">
+                <h2 class="section-title">New User Registration</h2>
+                <p class="section-subtitle">Create your account to access all features</p>
+                <div class="register-form-container">
+                    <form class="register-form">
+                        <div class="form-group">
+                            <label for="userType">I am a:</label>
+                            <select id="userType" name="userType" required>
+                                <option value="">Select your role</option>
+                                <option value="Student">Student</option>
+                                <option value="Parent">Parent</option>
+                                <option value="Faculty">Faculty</option>
+                                <option value="Admin">Other Member</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="College Id">College Id</label>
+                            <input type="cid" id="cid" name="cid" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign In Section -->
+        <section id="signin" class="signin-section">
+            <div class="container">
+                <h2 class="section-title">Sign In to Your Account</h2>
+                <p class="section-subtitle">Enter your credentials to access your portal</p>
+                <div class="signin-form-container">
+                    <form class="signin-form">
+                        <div class="form-group">
+                            <label for="loginEmail">Email or Username</label>
+                            <input type="text" id="loginEmail" name="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" name="loginPassword" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#help" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <p class="signup-link">Don't have an account? <a href="#register">Register here</a></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" class="help-section">
+            <div class="container">
+                <h2 class="section-title">Help & Support</h2>
+                <div class="help-content">
+                    <div class="help-categories">
+                        <div class="help-category">
+                            <h3>📚 Getting Started</h3>
+                            <ul>
+                                <li>How to create an account</li>
+                                <li>First-time login guide</li>
+                                <li>Understanding your dashboard</li>
+                            </ul>
+                        </div>
+                        <div class="help-category">
+                            <h3>❓ Frequently Asked Questions</h3>
+                            <ul>
+                                <li>How to reset your password</li>
+                                <li>Viewing attendance records</li>
+                                <li>Accessing performance reports</li>
+                                <li>Parent portal access</li>
+                            </ul>
+                        </div>
+                        <div class="help-category">
+                            <h3>💬 Need More Help?</h3>
+                            <p>Our support team is available to assist you with any questions or issues.</p>
+                            <a href="#contact" class="btn btn-secondary">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch with us for any inquiries or support</p>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>Address</h3>
+                                <p>123 Education Street<br>Academic City, AC 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@institute.edu<br>support@institute.edu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="contactSubject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#register">Register</a></li>
+                        <li><a href="#signin">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Institute Official Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
+
