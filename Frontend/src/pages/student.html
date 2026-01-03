@@ -7,9 +7,26 @@
 </head>
 <body>
   <main class="page-shell">
-    <h1>Student</h1>
-    <p>Placeholder student page.</p>
+    <h1>Student Portal</h1>
+    <p>Welcome, <span id="userName">Student</span>!</p>
+    <button id="logoutBtn" style="margin-top: 20px; padding: 10px 20px; cursor: pointer;">Logout</button>
   </main>
-  <script src="../assets/js/auth.js"></script>
+  <script type="module">
+    import { initAuth, getAuthUser, logout } from '../assets/js/auth.js';
+    
+    // Initialize authentication
+    initAuth();
+    
+    // Display user name
+    const user = getAuthUser();
+    if (user) {
+      document.getElementById('userName').textContent = user.fullName || 'Student';
+    }
+    
+    // Logout button
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      logout();
+    });
+  </script>
 </body>
 </html>
