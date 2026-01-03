@@ -9,8 +9,25 @@
 <body>
   <main class="page-shell">
     <h1>Dashboard</h1>
-    <p>Placeholder dashboard page.</p>
+    <p>Welcome, <span id="userName">User</span>!</p>
+    <button id="logoutBtn" style="margin-top: 20px; padding: 10px 20px; cursor: pointer;">Logout</button>
   </main>
-  <script src="../assets/js/dashboard.js"></script>
+  <script type="module">
+    import { initAuth, getAuthUser, logout } from '../assets/js/auth.js';
+    
+    // Initialize authentication
+    initAuth();
+    
+    // Display user name
+    const user = getAuthUser();
+    if (user) {
+      document.getElementById('userName').textContent = user.fullName || 'User';
+    }
+    
+    // Logout button
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      logout();
+    });
+  </script>
 </body>
 </html>

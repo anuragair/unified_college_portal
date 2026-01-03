@@ -343,6 +343,149 @@
             </div>
         </div>
     </footer>
+<<<<<<< HEAD
+=======
+
+    <script type="module">
+        import { authAPI, contactAPI } from './src/utils/api.js';
+
+        // Registration Form Handler
+        const registerForm = document.querySelector('.register-form');
+        if (registerForm) {
+            registerForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    userType: document.getElementById('userType').value,
+                    fullName: document.getElementById('fullName').value,
+                    cid: document.getElementById('cid').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    password: document.getElementById('password').value,
+                    confirmPassword: document.getElementById('confirmPassword').value
+                };
+
+                try {
+                    const submitBtn = registerForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Registering...';
+
+                    const response = await authAPI.register(formData);
+                    
+                    if (response.success) {
+                        // Store token and user data
+                        localStorage.setItem('token', response.data.token);
+                        localStorage.setItem('user', JSON.stringify(response.data.user));
+                        
+                        alert('Registration successful! Redirecting to login...');
+                        window.location.href = '#signin';
+                        registerForm.reset();
+                    }
+                } catch (error) {
+                    alert(error.message || 'Registration failed. Please try again.');
+                } finally {
+                    const submitBtn = registerForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Register';
+                }
+            });
+        }
+
+        // Sign In Form Handler
+        const signinForm = document.querySelector('.signin-form');
+        if (signinForm) {
+            signinForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+
+                try {
+                    const submitBtn = signinForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Signing in...';
+
+                    const response = await authAPI.login(email, password);
+                    
+                    if (response.success) {
+                        // Store token and user data
+                        localStorage.setItem('token', response.data.token);
+                        localStorage.setItem('user', JSON.stringify(response.data.user));
+                        
+                        // Redirect based on user type
+                        const userType = response.data.user.userType.toLowerCase();
+                        const redirectMap = {
+                            'student': '/src/pages/student.html',
+                            'faculty': '/src/pages/faculty.html',
+                            'admin': '/src/pages/admin.html',
+                            'parent': '/src/pages/dashboard.html'
+                        };
+                        
+                        const redirectPath = redirectMap[userType] || '/src/pages/dashboard.html';
+                        window.location.href = redirectPath;
+                    }
+                } catch (error) {
+                    alert(error.message || 'Login failed. Please check your credentials.');
+                } finally {
+                    const submitBtn = signinForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Sign In';
+                }
+            });
+        }
+
+        // Contact Form Handler
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    contactName: document.getElementById('contactName').value,
+                    contactEmail: document.getElementById('contactEmail').value,
+                    contactSubject: document.getElementById('contactSubject').value,
+                    contactMessage: document.getElementById('contactMessage').value
+                };
+
+                try {
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    const response = await contactAPI.submit(formData);
+                    
+                    if (response.success) {
+                        alert('Thank you for contacting us! We will get back to you soon.');
+                        contactForm.reset();
+                    }
+                } catch (error) {
+                    alert(error.message || 'Failed to send message. Please try again.');
+                } finally {
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#home') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+>>>>>>> e04d7f7 (first commit-Add backend functionality)
 </body>
 </html>
 
